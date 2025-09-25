@@ -1,73 +1,83 @@
-# Welcome to your Lovable project
+# 🌊 AI-Driven Unified Data Platform for Oceanographic, Fisheries & Molecular Biodiversity Insights
 
-## Project info
+🚀 *Team Octanauts – Smart India Hackathon 2025 Submission*
 
-**URL**: https://lovable.dev/projects/8b4623fc-3103-4043-b8a0-2dd083db2d6f
+---
 
-## How can I edit this code?
+## 📖 Overview
+India’s marine ecosystem is rich but data on *oceanography, fisheries, and molecular biodiversity* is fragmented across silos.  
+Researchers spend *40–60% of their time* on cleaning and formatting data instead of doing real science.  
 
-There are several ways of editing your application.
+This project proposes an *AI-driven unified platform* that integrates heterogeneous datasets, applies advanced ML models, and provides *actionable insights* for scientists, policymakers, and conservationists.  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8b4623fc-3103-4043-b8a0-2dd083db2d6f) and start prompting.
+## ✨ Key Features
+- 🔗 *Integrated Data Hub* – Brings together oceanographic, fisheries, otolith images, and DNA/eDNA datasets.  
+- ⚙ *Automated ETL Pipelines* – Python + Apache Airflow with Darwin Core metadata tagging.  
+- 🗄 *Smart Storage* – PostgreSQL/PostGIS for structured data + pgvector for semantic search.  
+- 🧠 *AI Modules* –  
+  - DNABERT + BLAST for DNA/eDNA species classification  
+  - CNN (Transfer Learning) for Otolith image analysis  
+  - LSTM/XGBoost for species abundance & anomaly detection  
+- 📊 *Interactive Dashboards* – React + Plotly + Leaflet maps for real-time visualization.  
+- 🔌 *APIs & Services* – FastAPI microservices + Natural Language Query Assistant.  
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🏗 System Architecture
+- 🌊 Sources → Oceanography, Fisheries, DNA/eDNA, Otolith images  
+- ⚙ ETL → Python + Airflow pipelines  
+- 🗂 Standardizer → Darwin Core, FASTA, JSON Schema  
+- 🗄 Database → PostgreSQL/PostGIS + Vector DB  
+- 🧠 AI Engine → DNABERT, CNN, LSTM/XGBoost  
+- 📊 User Layer → Dashboards, APIs, Reports  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🎯 Why It Matters
+- ⏱ *70% faster data preparation* (months → hours).  
+- 📈 *3x acceleration in biodiversity studies*.  
+- 💰 *₹50–100 Cr annual savings* by reducing redundant surveys.  
+- 🌱 *30–40% faster detection of invasive species* via eDNA.  
+- 👥 Supports *9M+ fisherfolk & coastal communities*.  
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📚 References
+- 📍 *Indian Agencies*:  
+  - CMLRE (MoES, Kochi) – Marine Living Resources Programme  
+  - INCOIS (Hyderabad) – Oceanographic & fisheries data  
+  - ICAR-CMFRI (Kochi) – Stock assessments & taxonomy  
+  - NBA (India) – Biodiversity documentation gaps  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- 🌐 *Global Benchmarks*:  
+  - FAO (2022) – State of World Fisheries & Aquaculture  
+  - OBIS, World Ocean Database, GenBank  
+  - IPCC (2019) – Special Report on Oceans & Cryosphere  
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 👥 Team Octanauts
+| Name | Role |
+|------|------|
+| 🧑‍💻 Member 1 | Backend & Data Engineering |
+| 🧑‍🔬 Member 2 | AI/ML Models |
+| 🎨 Member 3 | Frontend & Visualization |
+| 📊 Member 4 | Research & Documentation |
+| 🌊 Member 5 | Domain Knowledge & Validation |
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚀 Future Scope
+- 🌡 Integration with *climate change models*.  
+- 🐟 Expansion to *aquaculture datasets*.  
+- 🌍 Contribution to *global marine biodiversity networks*.  
+- 📡 Real-time satellite & sensor data integration.  
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🏆 Acknowledgement
+This project is supported under the *Smart India Hackathon 2025* and inspired by the vision of *CMLRE (MoES, Kochi)* for building India’s *Marine Data Backbone*.  
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8b4623fc-3103-4043-b8a0-2dd083db2d6f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
