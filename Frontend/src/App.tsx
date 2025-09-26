@@ -26,6 +26,7 @@ const App = () => (
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="upload" element={<Upload />} />
+             <Route path="oceanography" element={<Oceanography/>} />
             <Route path="visualization" element={<Visualization />} />
             <Route path="ai-tools" element={<AITools />} />
             <Route path="api-docs" element={<APIDocs />} />
