@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import Visualization from "./pages/Visualization";
+import Oceanography from "./pages/Oceanography";
 import AITools from "./pages/AITools";
 import APIDocs from "./pages/APIDocs";
 import About from "./pages/About";
