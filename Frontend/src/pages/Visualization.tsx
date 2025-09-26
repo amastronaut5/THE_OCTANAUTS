@@ -1,238 +1,264 @@
-import 'dotenv/config'; 
-import express from "express";
-import { createClient } from "@supabase/supabase-js";
-import cors from "cors";
+import React, { useEffect, useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement } from 'chart.js';
+import { Bar, Pie, Line } from 'react-chartjs-2';
+import { BarChart3, PieChart, TrendingUp } from "lucide-react";
 
-const app = express();
-app.use(cors({
-    origin: 'http://localhost:8080' 
-}));
-const port = 4000;
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  PointElement,
+  LineElement
+);
 
-// ----------------- SUPABASE CONNECTION -----------------
-const supabaseUrl = "https://fwxoxvhsrmrncjvcwoqz.supabase.co"
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3eG94dmhzcm1ybmNqdmN3b3F6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3ODAzODMsImV4cCI6MjA3NDM1NjM4M30.dI5zygTjLuehW2f5wiuk9rADJ3PY5Vws-6goeU6W3Mk";
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Define the secret token used by the API
+const SECRET_TOKEN = "mysecrettoken";
+const API_BASE_URL = "http://localhost:4000";
 
-// ----------------- AUTH MIDDLEWARE -----------------
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers["authorization"];
-  if (!authHeader) return res.sendStatus(401);
+const Visualization = () => {
+  // -------------------------------
+  // Pie Chart: WaterBody Distribution
+  // -------------------------------
+  const [waterBodyData, setWaterBodyData] = useState<any>(null);
 
-  const token = authHeader.split(" ")[1]; // Bearer <token>
-  if (token !== "mysecrettoken") return res.sendStatus(403);
+  useEffect(() => {
+    const fetchWaterBodyCounts = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/data/waterbody/counts`, {
+          headers: {
+            'Authorization': `Bearer ${SECRET_TOKEN}`
+          }
+        });
 
-  next();
-}
-function toTitleCase(s = "") {
-  return s
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((w) => w[0]?.toUpperCase() + w.slice(1).toLowerCase())
-    .join(" ");
-}
-
-// ----------------- ROUTES -----------------
-
-// ✅ 1. Get raw data (with eventDate as text → extract day/month/year)
-app.get("/data", authenticateToken, async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("oceanography").select("*").limit(100);
-    if (error) throw error;
-
-    const formattedData = data.map((row) => {
-      let day = null, month = null, year = null;
-      if (row.eventDate) {
-        const date = new Date(row.eventDate);
-        if (!isNaN(date)) {
-          day = date.getDate();
-          month = date.getMonth() + 1;
-          year = date.getFullYear();
+        if (!res.ok) {
+          console.error(`API call failed: ${res.status} ${res.statusText}`);
+          const errorText = await res.text();
+          throw new Error(`Failed to fetch waterBody counts. Status: ${res.status}. Body: ${errorText}`);
         }
+
+        const json = await res.json();
+
+        setWaterBodyData({
+          labels: json.map((item: any) => item.waterBody),
+          datasets: [
+            {
+              label: "Water Body Count",
+              data: json.map((item: any) => item.count),
+              backgroundColor: [
+                "hsl(210, 70%, 50%)",
+                "hsl(0, 70%, 55%)",
+                "hsl(150, 60%, 50%)",
+                "hsl(40, 85%, 55%)",
+                "hsl(280, 60%, 60%)",
+                "hsl(200, 75%, 55%)"
+              ],
+              borderWidth: 1,
+            },
+          ],
+        });
+      } catch (err) {
+        console.error("Error fetching waterBody counts:", err);
       }
-      return { ...row, day, month, year };
-    });
+    };
 
-    res.json(formattedData);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
+    fetchWaterBodyCounts();
+  }, []);
 
-// ✅ 2. Count by species
-app.get("/api/count-by-species", authenticateToken, async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("oceanography").select("scientificName").limit(1000);
-    if (error) throw error;
+  // -------------------------------
+  // Bar Chart: Geographic Distribution
+  // -------------------------------
+  const [geoData, setGeoData] = useState<any>(null);
 
-    const counts = {};
-    data.forEach((row) => {
-      counts[row.scientificName] = (counts[row.scientificName] || 0) + 1;
-    });
-
-    const result = Object.entries(counts)
-      .map(([scientificName, count]) => ({ scientificName, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 20);
-
-    res.json(result);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// ✅ 3. Count by year
-app.get("/api/count-by-year", authenticateToken, async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("oceanography").select("eventDate").limit(1000);
-    if (error) throw error;
-
-    const counts = {};
-    data.forEach((row) => {
-      if (row.eventDate) {
-        const date = new Date(row.eventDate);
-        if (!isNaN(date)) {
-          const year = date.getFullYear();
-          counts[year] = (counts[year] || 0) + 1;
+  useEffect(() => {
+    const fetchGeoData = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/map-points`, {
+          headers: {
+            'Authorization': `Bearer ${SECRET_TOKEN}`
+          }
+        });
+        
+        if (!res.ok) {
+          console.error(`API call failed: ${res.status} ${res.statusText}`);
+          const errorText = await res.text();
+          throw new Error(`Failed to fetch geo data. Status: ${res.status}. Body: ${errorText}`);
         }
+
+        const json = await res.json();
+
+        // Group longitudes into 6 categories
+        const categories = {
+          "<60": 0,
+          "60-70": 0,
+          "70-80": 0,
+          "80-90": 0,
+          "90-100": 0,
+          ">100": 0,
+        };
+
+        json.forEach((item: any) => {
+          const lon = Number(item.decimalLongitude);
+          if (lon < 60) categories["<60"]++;
+          else if (lon >= 60 && lon < 70) categories["60-70"]++;
+          else if (lon >= 70 && lon < 80) categories["70-80"]++;
+          else if (lon >= 80 && lon < 90) categories["80-90"]++;
+          else if (lon >= 90 && lon < 100) categories["90-100"]++;
+          else categories[">100"]++;
+        });
+
+        setGeoData({
+          labels: Object.keys(categories),
+          datasets: [
+            {
+              label: "Species Count by Longitude",
+              data: Object.values(categories),
+              backgroundColor: "hsl(210, 50%, 30%)",
+              borderColor: "hsl(195, 100%, 50%)",
+              borderWidth: 2,
+            },
+          ],
+        });
+      } catch (err) {
+        console.error("Error fetching geo data:", err);
       }
-    });
+    };
 
-    const result = Object.entries(counts)
-      .map(([year, count]) => ({ year: parseInt(year), count }))
-      .sort((a, b) => a.year - b.year);
+    fetchGeoData();
+  }, []);
 
-    res.json(result);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
+  // -------------------------------
+  // Timeline Chart: API Data for Year Counts 🚀
+  // -------------------------------
+  const [timelineAPIData, setTimelineAPIData] = useState<any>(null);
 
-// ✅ 4. Habitat distribution
-app.get("/api/habitat-distribution", authenticateToken, async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("oceanography").select("habitat").limit(1000);
-    if (error) throw error;
+  useEffect(() => {
+    const fetchTimelineData = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/count-by-year`, {
+          headers: {
+            'Authorization': `Bearer ${SECRET_TOKEN}`
+          }
+        });
+        
+        if (!res.ok) {
+          console.error(`API call failed: ${res.status} ${res.statusText}`);
+          const errorText = await res.text();
+          throw new Error(`Failed to fetch timeline data. Status: ${res.status}. Body: ${errorText}`);
+        }
 
-    const counts = {};
-    data.forEach((row) => {
-      counts[row.habitat] = (counts[row.habitat] || 0) + 1;
-    });
+        const json = await res.json();
+        
+        // Data format: [{ year: 2006, count: 1 }, ...]
+        setTimelineAPIData({
+          labels: json.map((item: any) => item.year),
+          datasets: [
+            {
+              label: 'Specimens Collected',
+              data: json.map((item: any) => item.count),
+              borderColor: 'hsl(210, 50%, 30%)',
+              backgroundColor: 'hsl(195, 100%, 85%)',
+              tension: 0.4,
+              fill: true,
+            },
+          ],
+        });
+        
+      } catch (err) {
+        console.error("Error fetching timeline data:", err);
+      }
+    };
 
-    const result = Object.entries(counts)
-      .map(([habitat, count]) => ({ habitat, count }))
-      .sort((a, b) => b.count - a.count);
+    fetchTimelineData();
+  }, []);
 
-    res.json(result);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
 
-// ✅ 5. Map points
-app.get("/api/map-points", authenticateToken, async (req, res) => {
-  try {
-    const { data, error } = await supabase
-      .from("metadata")
-      .select("decimalLatitude, decimalLongitude, scientificName")
-      .limit(1000);
+  // Use timelineAPIData if available, otherwise it remains null (for the Loading message)
+  const timelineData = timelineAPIData || {
+    labels: [],
+    datasets: [{ label: 'Specimens Collected', data: [] }],
+  };
 
-    if (error) throw error;
 
-    const filtered = data.filter(
-      (row) => row.decimalLatitude && row.decimalLongitude
-    );
+  const chartOptions = { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "top" as const } } };
+  const pieOptions = { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "right" as const } } };
 
-    res.json(filtered);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-ocean bg-clip-text text-transparent">
+            Data Visualization
+          </h1>
+          <p className="text-xl text-muted-foreground">
+            Interactive charts and insights from marine biodiversity data
+          </p>
+        </div>
 
-// ✅ 6. Life stage breakdown
-app.get("/api/life-stage", authenticateToken, async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("oceanography").select("lifeStage").limit(1000);
-    if (error) throw error;
+        <div className="grid gap-6">
+          {/* Pie Chart: WaterBody */}
+          <div className="grid lg:grid-cols-2 gap-6">
+            <Card className="bg-gradient-to-br from-background to-secondary/20">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <PieChart className="h-5 w-5 mr-2 text-primary" />
+                  Water Body Distribution
+                </CardTitle>
+                <CardDescription>
+                  Entries grouped by water body (from API)
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-64">
+                  {waterBodyData ? <Pie data={waterBodyData} options={pieOptions} /> : <p className="text-center text-muted-foreground">Loading...</p>}
+                </div>
+              </CardContent>
+            </Card>
 
-    const counts = {};
-    data.forEach((row) => {
-      counts[row.lifeStage] = (counts[row.lifeStage] || 0) + 1;
-    });
+            {/* Bar Chart: Longitude */}
+            <Card className="bg-gradient-to-br from-background to-secondary/20">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <BarChart3 className="h-5 w-5 mr-2 text-primary" />
+                  Geographic Distribution
+                </CardTitle>
+                <CardDescription>
+                  Species count by longitude ranges
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-64">
+                  {geoData ? <Bar data={geoData} options={chartOptions} /> : <p className="text-center text-muted-foreground">Loading...</p>}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
-    const result = Object.entries(counts)
-      .map(([lifeStage, count]) => ({ lifeStage, count }))
-      .sort((a, b) => b.count - a.count);
+          {/* Timeline Chart: Now using API data */}
+          <Card className="bg-gradient-to-br from-background to-secondary/20">
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <TrendingUp className="h-5 w-5 mr-2 text-primary" />
+                Collection Timeline
+              </CardTitle>
+              <CardDescription>
+                Specimens collected over time (fetched from API)
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="h-80">
+                {timelineAPIData ? <Line data={timelineData} options={chartOptions} /> : <p className="text-center text-muted-foreground">Loading...</p>}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-    res.json(result);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// ✅ 7. Get record by ID
-app.get("/api/record/:id", authenticateToken, async (req, res) => {
-  const { id } = req.params;
-  try {
-    const { data, error } = await supabase.from("oceanography").select("*").eq("id", id);
-    if (error) throw error;
-    res.json(data);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// ✅ 8. Get record by scientific name
-app.get("/api/record/scientific/:name", authenticateToken, async (req, res) => {
-  const { name } = req.params;
-  try {
-    const { data, error } = await supabase
-      .from("oceanography")
-      .select("*")
-      .ilike("scientificName", `%${name}%`)
-      .limit(50);
-
-    if (error) throw error;
-    res.json(data);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// ✅ 9. Count by waterBody (fixed integration)
-app.get("/data/waterbody/counts", authenticateToken, async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("oceanography").select("waterBody");
-    if (error) throw error;
-
-    const counts = {};
-    data.forEach((row) => {
-      const raw = row?.waterBody;
-      if (!raw) return;
-      const key = raw.trim().toLowerCase();
-      counts[key] = (counts[key] || 0) + 1;
-    });
-
-    const result = Object.entries(counts)
-      .map(([waterBody, count]) => ({ waterBody: toTitleCase(waterBody), count }))
-      .sort((a, b) => b.count - a.count);
-
-    res.json(result);
-  } catch (err) {
-    console.error("Error fetching waterBody counts:", err);
-    res.status(500).json({ error: "Database error" });
-  }
-});
-
-// ----------------- SERVER -----------------
-app.listen(port, () => {
-  console.log(`✅ Server running on http://localhost:${port}`);
-});
+export default Visualization;
