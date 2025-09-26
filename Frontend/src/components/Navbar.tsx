@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Waves, Database, BarChart3, Brain, Info, Home, FileText, User, Search } from "lucide-react";
+import { Waves, Database, BarChart3, Brain, Info, Home, FileText, User, Search, Waves } from "lucide-react";
 
 const Navbar = () => {
   const location = useLocation();
@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: "Home", path: "/", icon: Home },
     { name: "Upload Data", path: "/upload", icon: Database },
     { name: "Visualization", path: "/visualization", icon: BarChart3 },
+    { name: "Oceanography", path: "/oceanography", icon: Waves },
     { name: "AI Tools", path: "/ai-tools", icon: Brain },
     { name: "Search", path: "/search", icon: Search },
     { name: "Dashboard", path: "/dashboard", icon: User },
