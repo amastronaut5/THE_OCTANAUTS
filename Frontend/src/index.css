@@ -1,3 +1,5 @@
+@import "leaflet/dist/leaflet.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,28 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
+
+/* Fix React-Select appearing behind Leaflet map */
+.leaflet-container {
+  z-index: 0 !important; /* keep the map itself lower */
+}
+
+.leaflet-pane {
+  z-index: 0 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 400 !important; /* controls still above map */
+}
+
+/* Make sure React-Select stays above */
+.Select__menu,
+.css-26l3qy-menu, /* react-select default class */
+.css-1n7v3ny-menu {
+  z-index: 1000 !important;
+}
+
 
 @layer base {
   :root {
