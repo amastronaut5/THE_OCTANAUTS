@@ -1,0 +1,302 @@
+[
+  {
+    "id": 186,
+    "locality": "IO/SS/ACH/00004",
+    "minimumDepthInMeters": 323.0,
+    "maximumDepthInMeters": 323.0,
+    "decimalLatitude": 12.81,
+    "decimalLongitude": 93.08,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:220234",
+    "scientificName": "Puerulus sewelli"
+  },
+  {
+    "id": 226,
+    "locality": "IO/SS/ANO/00001",
+    "minimumDepthInMeters": 337.0,
+    "maximumDepthInMeters": 337.0,
+    "decimalLatitude": 6.84,
+    "decimalLongitude": 93.05,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:550579",
+    "scientificName": "Paralomis indica"
+  },
+  {
+    "id": 236,
+    "locality": "IO/SS/ANO/00011",
+    "minimumDepthInMeters": 213.0,
+    "maximumDepthInMeters": 213.0,
+    "decimalLatitude": 10.9,
+    "decimalLongitude": 93.07,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:392593",
+    "scientificName": "Munidopsis regia"
+  },
+  {
+    "id": 255,
+    "locality": "IO/SS/ANO/00032",
+    "minimumDepthInMeters": 213.0,
+    "maximumDepthInMeters": 213.0,
+    "decimalLatitude": 10.9,
+    "decimalLongitude": 93.07,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:392286",
+    "scientificName": "Munida andamanica"
+  },
+  {
+    "id": 286,
+    "locality": "IO/SS/ANO/00068",
+    "minimumDepthInMeters": 507.0,
+    "maximumDepthInMeters": 507.0,
+    "decimalLatitude": 16.04,
+    "decimalLongitude": 81.68,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:392601",
+    "scientificName": "Munidopsis scobina"
+  },
+  {
+    "id": 359,
+    "locality": "IO/SS/AST/00001",
+    "minimumDepthInMeters": 395.0,
+    "maximumDepthInMeters": 395.0,
+    "decimalLatitude": 7.75,
+    "decimalLongitude": 93.21,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:220230",
+    "scientificName": "Metanephrops andamanicus"
+  },
+  {
+    "id": 382,
+    "locality": "IO/SS/AST/00024",
+    "minimumDepthInMeters": 271.0,
+    "maximumDepthInMeters": 271.0,
+    "decimalLatitude": 6.64,
+    "decimalLongitude": 93.68,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:220231",
+    "scientificName": "Nephropsis stewarti"
+  },
+  {
+    "id": 431,
+    "locality": "IO/SS/BRC/00001",
+    "minimumDepthInMeters": 201.0,
+    "maximumDepthInMeters": 201.0,
+    "decimalLatitude": 11.99,
+    "decimalLongitude": 74.43,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:1552694",
+    "scientificName": "Charybdis (Archias) smithii"
+  },
+  {
+    "id": 439,
+    "locality": "IO/SS/BRC/00009",
+    "minimumDepthInMeters": 535.0,
+    "maximumDepthInMeters": 535.0,
+    "decimalLatitude": 11.35,
+    "decimalLongitude": 92.39,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:441953",
+    "scientificName": "Pleistacantha pungens"
+  },
+  {
+    "id": 449,
+    "locality": "IO/SS/BRC/00019",
+    "minimumDepthInMeters": 535.0,
+    "maximumDepthInMeters": 535.0,
+    "decimalLatitude": 11.35,
+    "decimalLongitude": 92.39,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:440169",
+    "scientificName": "Homolax megalops"
+  },
+  {
+    "id": 472,
+    "locality": "IO/SS/BRC/00042",
+    "minimumDepthInMeters": 441.0,
+    "maximumDepthInMeters": 441.0,
+    "decimalLatitude": 12.83,
+    "decimalLongitude": 93.21,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:442748",
+    "scientificName": "Benthochascon hemingi"
+  },
+  {
+    "id": 477,
+    "locality": "IO/SS/BRC/00047",
+    "minimumDepthInMeters": 183.0,
+    "maximumDepthInMeters": 183.0,
+    "decimalLatitude": 12.89,
+    "decimalLongitude": 73.98,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:441249",
+    "scientificName": "Parilia alcocki"
+  },
+  {
+    "id": 480,
+    "locality": "IO/SS/BRC/00050",
+    "minimumDepthInMeters": 567.0,
+    "maximumDepthInMeters": 567.0,
+    "decimalLatitude": 7.52,
+    "decimalLongitude": 93.4,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:440212",
+    "scientificName": "Paromolopsis boasi"
+  },
+  {
+    "id": 833,
+    "locality": "IO/SS/CAR/00034",
+    "minimumDepthInMeters": 160.0,
+    "maximumDepthInMeters": 160.0,
+    "decimalLatitude": 11.8,
+    "decimalLongitude": 92.33,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:390055",
+    "scientificName": "Heterocarpus chani"
+  },
+  {
+    "id": 991,
+    "locality": "IO/SS/DEN/00001",
+    "minimumDepthInMeters": 514.0,
+    "maximumDepthInMeters": 514.0,
+    "decimalLatitude": 11.15,
+    "decimalLongitude": 92.33,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:106807",
+    "scientificName": "Aristeus"
+  },
+  {
+    "id": 992,
+    "locality": "IO/SS/DEN/00002",
+    "minimumDepthInMeters": 643.0,
+    "maximumDepthInMeters": 643.0,
+    "decimalLatitude": 8.39,
+    "decimalLongitude": 93.34,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:240796",
+    "scientificName": "Aristaeopsis edwardsiana"
+  },
+  {
+    "id": 1135,
+    "locality": "IO/SS/ECD/00138",
+    "minimumDepthInMeters": 36.0,
+    "maximumDepthInMeters": 36.0,
+    "decimalLatitude": 11.59,
+    "decimalLongitude": 79.87,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:213420",
+    "scientificName": "Ophiuroglypha kinbergi"
+  },
+  {
+    "id": 1460,
+    "locality": "IO/SS/FIS/00027",
+    "minimumDepthInMeters": 238.0,
+    "maximumDepthInMeters": 238.0,
+    "decimalLatitude": 9.992916667,
+    "decimalLongitude": 75.596133,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:159713",
+    "scientificName": "Neoepinnula orientalis"
+  },
+  {
+    "id": 1632,
+    "locality": "IO/SS/FIS/00428",
+    "minimumDepthInMeters": 214.0,
+    "maximumDepthInMeters": 214.0,
+    "decimalLatitude": 14.26805556,
+    "decimalLongitude": 73.276944,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:1017879",
+    "scientificName": "Chaunax apus"
+  },
+  {
+    "id": 1642,
+    "locality": "IO/SS/FIS/00438",
+    "minimumDepthInMeters": 299.0,
+    "maximumDepthInMeters": 299.0,
+    "decimalLatitude": 13.22,
+    "decimalLongitude": 93.18,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:1438366",
+    "scientificName": "Chaunax multilepis"
+  },
+  {
+    "id": 1864,
+    "locality": "IO/SS/FIS/00660",
+    "minimumDepthInMeters": 99.0,
+    "maximumDepthInMeters": 320.0,
+    "decimalLatitude": 8.08,
+    "decimalLongitude": 75.99,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:275023",
+    "scientificName": "Astronesthes indopacificus"
+  },
+  {
+    "id": 2046,
+    "locality": "IO/SS/POC/00009",
+    "minimumDepthInMeters": 645.0,
+    "maximumDepthInMeters": 645.0,
+    "decimalLatitude": 11.01,
+    "decimalLongitude": 80.3,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:382998",
+    "scientificName": "Stereomastis phosphorus"
+  },
+  {
+    "id": 2269,
+    "locality": "IO/SS/POL/00671",
+    "minimumDepthInMeters": 52.0,
+    "maximumDepthInMeters": 52.0,
+    "decimalLatitude": 12.25,
+    "decimalLongitude": 92.35,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:1421293",
+    "scientificName": "Prionospio atrovitta"
+  },
+  {
+    "id": 2354,
+    "locality": "IO/SS/POL/00807",
+    "minimumDepthInMeters": 384.0,
+    "maximumDepthInMeters": 384.0,
+    "decimalLatitude": 9.62,
+    "decimalLongitude": 92.73,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:129587",
+    "scientificName": "Euthalenessa"
+  },
+  {
+    "id": 2373,
+    "locality": "IO/SS/POL/00826",
+    "minimumDepthInMeters": 55.0,
+    "maximumDepthInMeters": 55.0,
+    "decimalLatitude": 10.68,
+    "decimalLongitude": 92.7,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:129593",
+    "scientificName": "Pelogenia"
+  },
+  {
+    "id": 2384,
+    "locality": "IO/SS/POL/00837",
+    "minimumDepthInMeters": 63.0,
+    "maximumDepthInMeters": 63.0,
+    "decimalLatitude": 10.67,
+    "decimalLongitude": 92.3,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:129439",
+    "scientificName": "Pholoe"
+  },
+  {
+    "id": 2402,
+    "locality": "IO/SS/POL/00855",
+    "minimumDepthInMeters": 55.0,
+    "maximumDepthInMeters": 55.0,
+    "decimalLatitude": 9.3,
+    "decimalLongitude": 92.79,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:129469",
+    "scientificName": "Pisione"
+  },
+  {
+    "id": 2416,
+    "locality": "IO/SS/POL/00869",
+    "minimumDepthInMeters": 100.0,
+    "maximumDepthInMeters": 100.0,
+    "decimalLatitude": 10.68,
+    "decimalLongitude": 92.23,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:129595",
+    "scientificName": "Sthenelais"
+  },
+  {
+    "id": 2459,
+    "locality": "IO/SS/STO/00001",
+    "minimumDepthInMeters": 409.0,
+    "maximumDepthInMeters": 409.0,
+    "decimalLatitude": 11.21,
+    "decimalLongitude": 92.36,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:409361",
+    "scientificName": "Squilloides leptosquilla"
+  },
+  {
+    "id": 2506,
+    "locality": "IO/SS/ISO/00001",
+    "minimumDepthInMeters": 645.0,
+    "maximumDepthInMeters": 645.0,
+    "decimalLatitude": 11.1,
+    "decimalLongitude": 80.32,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:292760",
+    "scientificName": "Bathynomus keablei"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "IO/DV/ECD/00232",
+    "locality": "Agatti, Lakshadweep",
+    "minimumDepthInMeters": 24.0,
+    "maximumDepthInMeters": 24.0,
+    "decimalLatitude": 10.861,
+    "decimalLongitude": 72.21,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:1306667",
+    "scientificName": "Ophiomastix elegans"
+  },
+  {
+    "id": "IO/IT/POL/00696",
+    "locality": "Agatti Island",
+    "minimumDepthInMeters": 2.0,
+    "maximumDepthInMeters": 2.0,
+    "decimalLatitude": 10.84,
+    "decimalLongitude": 72.18,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:209659",
+    "scientificName": "Lepidonotus cristatus"
+  },
+  {
+    "id": "IO/SS/ACH/00001",
+    "locality": "East off North Andaman Island",
+    "minimumDepthInMeters": 299.0,
+    "maximumDepthInMeters": 299.0,
+    "decimalLatitude": 13.22,
+    "decimalLongitude": 93.18,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:210644",
+    "scientificName": "Linuparus somniosus"
+  },
+  {
+    "id": "IO/SS/ACH/00004",
+    "locality": "East off Middle Andaman Island",
+    "minimumDepthInMeters": 323.0,
+    "maximumDepthInMeters": 323.0,
+    "decimalLatitude": 12.81,
+    "decimalLongitude": 93.08,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:220234",
+    "scientificName": "Puerulus sewelli"
+  },
+  {
+    "id": "IO/SS/ACH/00010",
+    "locality": "West off Great Nicobar Island",
+    "minimumDepthInMeters": 337.0,
+    "maximumDepthInMeters": 337.0,
+    "decimalLatitude": 6.84,
+    "decimalLongitude": 93.05,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:220234",
+    "scientificName": "Puerulus sewelli"
+  },
+  {
+    "id": "IO/SS/ACH/00041",
+    "locality": "Great Nicobar Island",
+    "minimumDepthInMeters": 337.0,
+    "maximumDepthInMeters": 337.0,
+    "decimalLatitude": 6.84,
+    "decimalLongitude": 93.05,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:220234",
+    "scientificName": "Puerulus sewelli"
+  },
+  {
+    "id": "IO/SS/ANO/00002",
+    "locality": "Northwest off Honnavar, Karnataka",
+    "minimumDepthInMeters": 957.0,
+    "maximumDepthInMeters": 957.0,
+    "decimalLatitude": 14.39,
+    "decimalLongitude": 73.03,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:1470586",
+    "scientificName": "Uroptychus sampadae"
+  },
+  {
+    "id": "IO/SS/ANO/00011",
+    "locality": "East off Little Andaman Island",
+    "minimumDepthInMeters": 213.0,
+    "maximumDepthInMeters": 213.0,
+    "decimalLatitude": 10.9,
+    "decimalLongitude": 93.07,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:392593",
+    "scientificName": "Munidopsis regia"
+  },
+  {
+    "id": "IO/SS/ANO/00044",
+    "locality": "Southwest off Trivandrum, Kerala",
+    "minimumDepthInMeters": 610.0,
+    "maximumDepthInMeters": 610.0,
+    "decimalLatitude": 8.24,
+    "decimalLongitude": 76.49,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:392286",
+    "scientificName": "Munida andamanica"
+  },
+  {
+    "id": "IO/SS/CEP/00019",
+    "locality": "Off Kochi",
+    "minimumDepthInMeters": 300.0,
+    "maximumDepthInMeters": 1089.0,
+    "decimalLatitude": 9.8,
+    "decimalLongitude": 75.5,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:138849",
+    "scientificName": "Japetella diaphana"
+  },
+  {
+    "id": "IO/SS/ECD/00071",
+    "locality": "Trivandrum",
+    "minimumDepthInMeters": 53.0,
+    "maximumDepthInMeters": 53.0,
+    "decimalLatitude": 8.43,
+    "decimalLongitude": 76.8,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:213448",
+    "scientificName": "Ophiodaphne scripta"
+  },
+  {
+    "id": "IO/SS/ECD/00075",
+    "locality": "Cape Comerin",
+    "minimumDepthInMeters": 199.0,
+    "maximumDepthInMeters": 199.0,
+    "decimalLatitude": 7.23,
+    "decimalLongitude": 77.51,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:213234",
+    "scientificName": "Astropecten hemprichi"
+  },
+  {
+    "id": "IO/SS/ECD/00161",
+    "locality": "Car Nicobar Island",
+    "minimumDepthInMeters": 52.0,
+    "maximumDepthInMeters": 52.0,
+    "decimalLatitude": 9.30285,
+    "decimalLongitude": 92.787483,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:246758",
+    "scientificName": "Comatella stelligera"
+  },
+  {
+    "id": "IO/SS/ECD/00166",
+    "locality": "North Andaman",
+    "minimumDepthInMeters": 635.0,
+    "maximumDepthInMeters": 635.0,
+    "decimalLatitude": 13.31975,
+    "decimalLongitude": 93.262,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:243710",
+    "scientificName": "Ophioleuce seminudum"
+  },
+  {
+    "id": "IO/SS/ECD/00183",
+    "locality": "Little Andaman Island",
+    "minimumDepthInMeters": 49.0,
+    "maximumDepthInMeters": 49.0,
+    "decimalLatitude": 10.6761,
+    "decimalLongitude": 92.6811,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:244143",
+    "scientificName": "Ophiothrix (Acanthophiothrix) proteus"
+  },
+  {
+    "id": "IO/SS/ECD/00185",
+    "locality": "South Andaman",
+    "minimumDepthInMeters": 59.0,
+    "maximumDepthInMeters": 59.0,
+    "decimalLatitude": 11.7811,
+    "decimalLongitude": 92.484317,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:535974",
+    "scientificName": "Amphioplus (Lymanella) andreae"
+  },
+  {
+    "id": "IO/SS/ECD/00313",
+    "locality": "Minicoy, Lakshadweep",
+    "minimumDepthInMeters": 555.0,
+    "maximumDepthInMeters": 555.0,
+    "decimalLatitude": 8.336833333,
+    "decimalLongitude": 73.090167,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:243950",
+    "scientificName": "Ophioplax custos"
+  },
+  {
+    "id": "IO/SS/FIS/00288",
+    "locality": "Off North Andaman",
+    "minimumDepthInMeters": 299.0,
+    "maximumDepthInMeters": 299.0,
+    "decimalLatitude": 13.22,
+    "decimalLongitude": 93.18,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:272059",
+    "scientificName": "Chlorophthalmus nigromarginatus"
+  },
+  {
+    "id": "IO/SS/FIS/00437",
+    "locality": "ABNJ",
+    "minimumDepthInMeters": 600.0,
+    "maximumDepthInMeters": 1862.0,
+    "decimalLatitude": 0.878,
+    "decimalLongitude": 67.598,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:1438365",
+    "scientificName": "Oneirodes sanjeevani"
+  },
+  {
+    "id": "IO/SS/FIS/00522",
+    "locality": "Western Indian Ocean",
+    "minimumDepthInMeters": 300.0,
+    "maximumDepthInMeters": 1471.0,
+    "decimalLatitude": "/7.75",
+    "decimalLongitude": 59.18,
+    "scientificNameID": "urn:lsid:marinespecies.org:taxname:283168",
+    "scientificName": "Woodsia nonsuchae"
+  }
+]
