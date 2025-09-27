@@ -8,7 +8,18 @@ import stationData from "../../data/ocean_locality_map.json";
 import speciesData from "../../data/ocean_name_map.json"
 import phChloroData from "../../data/phChloroData.json"
 import { ChartOptions } from "chart.js";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+});
 
 type Station = typeof stationData[number];
 type Species = typeof speciesData[number];

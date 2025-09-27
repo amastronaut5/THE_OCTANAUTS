@@ -8,6 +8,8 @@ import { Brain, Search, Upload, Fish, Zap, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+
 const AITools = () => {
   const [speciesName, setSpeciesName] = useState("");
   const [classification, setClassification] = useState("");
@@ -66,7 +68,7 @@ const AITools = () => {
 
   try {
     const res = await axios.get(
-      `http://localhost:4000/api/record/scientific/${encodeURIComponent(searchQuery)}`,
+      `${API_BASE_URL}/api/record/scientific/${encodeURIComponent(searchQuery)}`,
       {
         headers: {
           Authorization: "Bearer mysecrettoken", // match your backend auth

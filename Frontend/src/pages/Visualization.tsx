@@ -17,8 +17,8 @@ ChartJS.register(
 );
 
 // Define the secret token used by the API
-const SECRET_TOKEN = "mysecrettoken";
-const API_BASE_URL = "http://localhost:4000";
+const SECRET_TOKEN = import.meta.env.VITE_SECRET_TOKEN;
+const API_BASE_URL = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
 const Visualization = () => {
   // -------------------------------
