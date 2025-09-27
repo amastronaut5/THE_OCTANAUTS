@@ -5,7 +5,7 @@ import cors from "cors";
 
 const app = express();
 const port = 4000;
-app.use(cors());
+app.use(cors({ origin: "*"}));
 // ----------------- SUPABASE CONNECTION -----------------
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
